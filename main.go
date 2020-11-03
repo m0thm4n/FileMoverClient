@@ -59,7 +59,7 @@ func sendFileToServer(fileName string, connection net.Conn) {
         connection.Write([]byte("-1"))
         log.Fatal(err)
     }
-    connection.Write([]byte("send " + fileName))
+    connection.Write([]byte(fileName))
     //read file until there is an error
     for err == nil || err != io.EOF {
 
